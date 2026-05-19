@@ -1,0 +1,316 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* PHANTOM PROTOCOL - Matrix Hacker Aesthetic */
+  /* Realistic cinematic hacking environment with true Matrix vibes */
+  
+  /* Main colors - Pure blacks with Matrix green/cyan */
+  --background: oklch(0.03 0 0);                    /* Pure black */
+  --foreground: oklch(0.25 0.15 160);              /* Matrix green */
+  --card: oklch(0.08 0 0);                         /* Deep black cards */
+  --card-foreground: oklch(0.25 0.15 160);         /* Green text */
+  --popover: oklch(0.08 0 0);
+  --popover-foreground: oklch(0.25 0.15 160);
+  
+  /* Primary: Matrix green */
+  --primary: oklch(0.25 0.15 160);                 /* Matrix green */
+  --primary-foreground: oklch(0.03 0 0);
+  
+  /* Secondary: Cyan accents */
+  --secondary: oklch(0.55 0.22 264);               /* Bright cyan */
+  --secondary-foreground: oklch(0.03 0 0);
+  
+  /* Muted: Dark grays */
+  --muted: oklch(0.15 0 0);                        /* Very dark gray */
+  --muted-foreground: oklch(0.4 0 0);              /* Darker gray text */
+  
+  /* Accent: Bright cyan */
+  --accent: oklch(0.55 0.22 264);                  /* Bright cyan */
+  --accent-foreground: oklch(0.03 0 0);
+  
+  /* Destructive: Red alerts */
+  --destructive: oklch(0.60 0.23 25);              /* Alert red */
+  --destructive-foreground: oklch(0.03 0 0);
+  
+  /* Borders and inputs */
+  --border: oklch(0.12 0 0);
+  --input: oklch(0.08 0 0);
+  --ring: oklch(0.55 0.22 264);                    /* Cyan glow */
+  
+  /* Charts */
+  --chart-1: oklch(0.55 0.22 264);                 /* Cyan */
+  --chart-2: oklch(0.25 0.15 160);                 /* Matrix green */
+  --chart-3: oklch(0.60 0.23 25);                  /* Red */
+  --chart-4: oklch(0.35 0.18 140);                 /* Dark green */
+  --chart-5: oklch(0.45 0.15 120);                 /* Darker green */
+  
+  --radius: 0.25rem;
+  
+  /* Sidebar theme */
+  --sidebar: oklch(0.06 0 0);
+  --sidebar-foreground: oklch(0.25 0.15 160);
+  --sidebar-primary: oklch(0.25 0.15 160);
+  --sidebar-primary-foreground: oklch(0.03 0 0);
+  --sidebar-accent: oklch(0.55 0.22 264);
+  --sidebar-accent-foreground: oklch(0.03 0 0);
+  --sidebar-border: oklch(0.12 0 0);
+  --sidebar-ring: oklch(0.55 0.22 264);
+  
+  /* Matrix-specific variables */
+  --matrix-green: oklch(0.25 0.15 160);
+  --matrix-cyan: oklch(0.55 0.22 264);
+  --matrix-red: oklch(0.60 0.23 25);
+  --matrix-dark: oklch(0.03 0 0);
+}
+
+.dark {
+  /* Matrix aesthetic as default dark mode */
+  --background: oklch(0.03 0 0);
+  --foreground: oklch(0.25 0.15 160);
+  --card: oklch(0.08 0 0);
+  --card-foreground: oklch(0.25 0.15 160);
+  --popover: oklch(0.08 0 0);
+  --popover-foreground: oklch(0.25 0.15 160);
+  --primary: oklch(0.25 0.15 160);
+  --primary-foreground: oklch(0.03 0 0);
+  --secondary: oklch(0.55 0.22 264);
+  --secondary-foreground: oklch(0.03 0 0);
+  --muted: oklch(0.15 0 0);
+  --muted-foreground: oklch(0.4 0 0);
+  --accent: oklch(0.55 0.22 264);
+  --accent-foreground: oklch(0.03 0 0);
+  --destructive: oklch(0.60 0.23 25);
+  --destructive-foreground: oklch(0.03 0 0);
+  --border: oklch(0.12 0 0);
+  --input: oklch(0.08 0 0);
+  --ring: oklch(0.55 0.22 264);
+  --chart-1: oklch(0.55 0.22 264);
+  --chart-2: oklch(0.25 0.15 160);
+  --chart-3: oklch(0.60 0.23 25);
+  --chart-4: oklch(0.35 0.18 140);
+  --chart-5: oklch(0.45 0.15 120);
+  --sidebar: oklch(0.06 0 0);
+  --sidebar-foreground: oklch(0.25 0.15 160);
+  --sidebar-primary: oklch(0.25 0.15 160);
+  --sidebar-primary-foreground: oklch(0.03 0 0);
+  --sidebar-accent: oklch(0.55 0.22 264);
+  --sidebar-accent-foreground: oklch(0.03 0 0);
+  --sidebar-border: oklch(0.12 0 0);
+  --sidebar-ring: oklch(0.55 0.22 264);
+}
+
+@theme inline {
+  --font-sans: 'Geist', 'Geist Fallback';
+  --font-mono: 'Geist Mono', 'Geist Mono Fallback';
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* PHANTOM PROTOCOL - Matrix Hacker Animations */
+
+/* Matrix rain effect */
+@keyframes matrix-rain {
+  0% { transform: translateY(-100%); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+/* Glitch effect for text */
+@keyframes glitch {
+  0%, 100% { 
+    text-shadow: 2px 0 #25a15e, -2px 0 #00ffff; 
+  }
+  25% { 
+    text-shadow: -2px 0 #25a15e, 2px 0 #00ffff; 
+  }
+  50% { 
+    text-shadow: 2px 0 #00ffff, -2px 0 #25a15e; 
+  }
+  75% { 
+    text-shadow: -2px 0 #00ffff, 2px 0 #25a15e; 
+  }
+}
+
+/* Scan line effect */
+@keyframes scanlines {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 10px; }
+}
+
+/* CRT flicker */
+@keyframes crt-flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% { opacity: 0.98; }
+  20%, 24%, 55% { opacity: 0.90; }
+}
+
+/* Pulse glow for alerts */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(255, 0, 0, 0.9); }
+}
+
+/* Green glow for success */
+@keyframes green-glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(37, 161, 94, 0.5); }
+  50% { box-shadow: 0 0 15px rgba(37, 161, 94, 0.8); }
+}
+
+/* Cyan glow for processing */
+@keyframes cyan-glow {
+  0%, 100% { box-shadow: 0 0 5px rgba(85, 239, 255, 0.5); }
+  50% { box-shadow: 0 0 15px rgba(85, 239, 255, 0.8); }
+}
+
+/* Type animation */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-cursor {
+  0%, 49% { border-right: 2px solid currentColor; }
+  50%, 100% { border-right: 2px solid transparent; }
+}
+
+/* Police siren effect */
+@keyframes police-red {
+  0%, 100% { background-color: transparent; }
+  50% { background-color: rgba(255, 0, 0, 0.1); }
+}
+
+@keyframes police-blue {
+  0%, 100% { background-color: transparent; }
+  50% { background-color: rgba(0, 0, 255, 0.1); }
+}
+
+/* Classes for animations */
+.matrix-rain {
+  animation: matrix-rain linear forwards;
+}
+
+.glitch-text {
+  animation: glitch 0.3s ease-in-out;
+}
+
+.scanline-effect {
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  animation: scanlines 8s linear infinite;
+  pointer-events: none;
+}
+
+.crt-flicker {
+  animation: crt-flicker 0.15s infinite;
+}
+
+.pulse-red {
+  animation: pulse-glow 1.5s ease-in-out infinite;
+}
+
+.pulse-green {
+  animation: green-glow 1.5s ease-in-out infinite;
+}
+
+.pulse-cyan {
+  animation: cyan-glow 1.5s ease-in-out infinite;
+}
+
+.typing-effect {
+  animation: typing 0.5s steps(40, end);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.cursor-blink {
+  animation: blink-cursor 1s step-start infinite;
+}
+
+.police-alert {
+  animation: police-red 0.5s infinite, police-blue 0.5s 0.25s infinite;
+}
+
+/* CRT monitor effect */
+.crt-monitor {
+  background: radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.5) 100%);
+  box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.8), 0 0 20px rgba(37, 161, 94, 0.3);
+}
+
+/* Terminal window styling */
+.terminal-window {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  background-color: rgba(3, 3, 3, 0.95);
+  border: 1px solid rgba(37, 161, 94, 0.3);
+  border-radius: 0.25rem;
+  box-shadow: 0 0 10px rgba(37, 161, 94, 0.2);
+}
+
+.terminal-input {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  background-color: transparent;
+  color: currentColor;
+  caret-color: currentColor;
+}
+
+/* Hacker aesthetic text */
+.hacker-text {
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+/* Glow effect text */
+.glow-text {
+  text-shadow: 0 0 8px rgba(37, 161, 94, 0.6);
+}
